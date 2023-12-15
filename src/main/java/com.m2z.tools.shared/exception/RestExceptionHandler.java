@@ -9,8 +9,6 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -62,20 +60,13 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
                 "Could not perform request due to data integrity violation");
     }
 
-    @ExceptionHandler(AuthenticationException.class)
-    @ResponseStatus(HttpStatus.UNAUTHORIZED)
-    protected ResponseEntity<Object> handleAuthenticationException(
-            AuthenticationException exception) {
-        return buildResponseEntity(HttpStatus.UNAUTHORIZED, exception.getMessage());
-    }
-
     @ExceptionHandler(ForbiddenException.class)
     @ResponseStatus(HttpStatus.FORBIDDEN)
     protected ResponseEntity<Object> handleForbiddenException(ForbiddenException exception) {
         return buildResponseEntity(HttpStatus.FORBIDDEN, exception.getMessage());
     }
 
-    @ExceptionHandler({NotFoundException.class, UsernameNotFoundException.class})
+    @ExceptionHandler(NotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
     protected ResponseEntity<Object> handleNotFoundException(Exception exception) {
         return buildResponseEntity(HttpStatus.NOT_FOUND, exception.getMessage());
