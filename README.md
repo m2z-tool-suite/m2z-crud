@@ -23,6 +23,6 @@ and the dependency:
 <dependency>
     <groupId>com.github.m2z-tool-suite</groupId>
     <artifactId>m2z-crud</artifactId>
-    <version>-SNAPSHOT</version>
+    <version>Tag</version>
 </dependency>
 ```
