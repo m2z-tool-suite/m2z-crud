@@ -1,12 +1,13 @@
-# Learning management system - Shared library
+# M2Z Tools - Shared library for CRUD operations
 
-Shared library for Spring Boot microservices in Learning management system
+Shared library for CRUD operations in Spring Boot RESTful microservices in M2Z Tool Suite
 
-[![](https://jitpack.io/v/bojanzdelar/learning-management-system-shared-library.svg)](https://jitpack.io/#bojanzdelar/learning-management-system-shared-library)
+[![](https://jitpack.io/v/m2z-tool-suite/m2z-crud.svg)](https://jitpack.io/#m2z-tool-suite/m2z-crud)
 
 ## Using with Maven
 
 To use it in your Maven build add:
+
 ```xml
 <repositories>
     <repository>
@@ -20,8 +21,8 @@ and the dependency:
 
 ```xml
 <dependency>
-    <groupId>com.github.bojanzdelar</groupId>
-    <artifactId>learning-management-system-shared-library</artifactId>
-    <version>Tag</version>
+    <groupId>com.github.m2z-tool-suite</groupId>
+    <artifactId>m2z-crud</artifactId>
+    <version>-SNAPSHOT</version>
 </dependency>
 ```
